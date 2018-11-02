@@ -2,6 +2,8 @@ package com.seb.weeksevenchallenge.Model;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 @Entity
@@ -14,6 +16,7 @@ public class Employee {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="department_id")
+    @JsonIgnore
     private Department department;
 
     public long getEmpId() {
