@@ -46,7 +46,7 @@ public class DataLoader implements CommandLineRunner{
         employee6.setJobTitle("Team Leader");
 
         Department departmentA=new Department();
-        departmentA.setDepName("Engineering");
+        departmentA.setDepName("Engineering Department");
         Set<Employee> employeeSetA=new HashSet<Employee>();
         employeeSetA.add(employee5);
         employeeSetA.add(employee6);
@@ -56,7 +56,7 @@ public class DataLoader implements CommandLineRunner{
 
 
         Department departmentB=new Department();
-        departmentB.setDepName("Human Resource");
+        departmentB.setDepName("Human Resource Department");
         Set<Employee> employeeSetB=new HashSet<Employee>();
         employeeSetB.add(employee1);
         employeeSetB.add(employee2);
@@ -65,7 +65,7 @@ public class DataLoader implements CommandLineRunner{
         employee2.setDepartment(departmentB);
 
         Department departmentC=new Department();
-        departmentC.setDepName("Finance");
+        departmentC.setDepName("Finance Department");
         Set<Employee> employeeSetC=new HashSet<Employee>();
         employeeSetC.add(employee3);
         employeeSetC.add(employee4);

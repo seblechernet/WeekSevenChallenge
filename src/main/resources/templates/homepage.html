@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Home Page</title>
+    <title>Home page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Dalton Solutions</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="#">Home</a></li>
 
+        </ul>
+    </div>
+</nav>
+<div class="bg">
+<div class="container">
+    <div class="jumbotron">
+        <h1>Employees and Departments</h1>
+    </div>
+
+</div>
 <div th:each="department : ${departments}">
     <h3 th:text="${department.depName}"></h3>
     <h6>List of Employees</h6>
@@ -16,8 +38,8 @@
     </ul>
 </div>
 
-<a th:href="@{/adddepartment}">ADD DEPARTMENT</a>
-<a th:href="@{/addemployee}">ADD EMPLOYEE</a>
-
+<a th:href="@{/adddepartment}"><button type="button" class="btn btn-primary">ADD DEPARTMENT</button></a>
+<a th:href="@{/addemployee}"><button type="button" class="btn btn-primary">ADD EMPLOYEE</button></a>
+</div>
 </body>
 </html>
