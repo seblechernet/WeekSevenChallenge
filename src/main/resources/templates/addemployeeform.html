@@ -6,13 +6,14 @@
 </head>
 <body>
 <form action="#" th:action="@{/saveemployee}" method="post"
-      th:object="${departments}">
+      th:object="${employee}">
     Employee Name:<input type="text" name="name">
     Employee Title:<input type="text" name="jobTitle">
     Choose departments
-    <select name="depName">
-        <option th:each="department : ${departments}" th:value="${department.depName}">[[{department.depName}]]</option>
+    <select type="text" name="namedep" multiple class="form-control">
+        <option th:each="department:${departments}" th:value="${department.depName}">[[${department.depName}]]</option>
     </select>
+
 
     <input type="submit" value="Add Employee">
 </form>

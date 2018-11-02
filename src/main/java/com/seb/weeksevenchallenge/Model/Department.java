@@ -10,7 +10,7 @@ public class Department {
     private int depId;
     private String depName;
 
-    @OneToMany(mappedBy = "department",cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "department")
     private Set<Employee> employeeSet;
 
 

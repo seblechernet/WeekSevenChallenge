@@ -7,10 +7,9 @@ import com.seb.weeksevenchallenge.Repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.HashSet;
 
 @Controller
 public class MainController {
@@ -46,17 +45,21 @@ public class MainController {
     }
     @RequestMapping("/addemployee")
     public String addEmployee(Model model){
-        model.addAttribute("depatrments",departmentRepository.findAll());
+        model.addAttribute("employee",new Employee());
+        model.addAttribute("departments",departmentRepository.findAll());
 
         return "addemployeeform";
     }
     @PostMapping("/saveemployee")
-    public String saveEmployee(@RequestParam String name,String jobTitle,Employee employee,String depName){
+    public String saveEmployee(@RequestParam String name, String jobTitle, Employee employee, String namedep, Department department){
 
         employee.setName(name);
         employee.setJobTitle(jobTitle);
 
+        department=departmentRepository.findAllBydepName(namedep);
+        employee.setDepartment(department);
         employeeRepository.save(employee);
+
 
         return "redirect:/";
 
