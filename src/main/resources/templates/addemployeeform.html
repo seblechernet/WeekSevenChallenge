@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Employee</title>
+</head>
+<body>
+<form action="#" th:action="@{/saveemployee}" method="post"
+      th:object="${departments}">
+    Employee Name:<input type="text" name="name">
+    Employee Title:<input type="text" name="jobTitle">
+    Choose departments
+    <select name="depName">
+        <option th:each="department : ${departments}" th:value="${department.depName}">[[{department.depName}]]</option>
+    </select>
+
+    <input type="submit" value="Add Employee">
+</form>
+<a href="@{/}">Go Back To HomePage</a>
+</body>
+</html>

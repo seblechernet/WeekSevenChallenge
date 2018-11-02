@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+</head>
+<body>
+
+<div th:each="department : ${departments}">
+    <h3 th:text="${department.depName}"></h3>
+    <h6>List of Employees</h6>
+    <ul>
+        <th:block th:each="employee : ${department.employeeSet}">
+            <li th:text="${employee.name}"></li>
+        </th:block>
+    </ul>
+</div>
+
+<a href="@{/adddepartment}">ADD DEPARTMENT</a>
+<a href="@{/addemployee}">ADD EMPLOYEE</a>
+
+</body>
+</html>
